@@ -13,9 +13,11 @@ The package leverages several [tools](#tools) and [tips](#tips) to make your MLO
 You can use this package as part of your MLOps toolkit or platform (e.g., Model Registry, Experiment Tracking, Realtime Inference, ...).
 
 **Related Resources**:
+
 - **[LLMOps Coding Package (Example)](https://github.com/callmesora/llmops-python-package/)**: Example with best practices and tools to support your LLMOps projects.
 - **[MLOps Coding Course (Learning)](https://github.com/MLOps-Courses/mlops-coding-course)**: Learn how to create, develop, and maintain a state-of-the-art MLOps code base.
 - **[Cookiecutter MLOps Package (Template)](https://github.com/fmind/cookiecutter-mlops-package)**: Start building and deploying Python packages and Docker images for MLOps tasks.
+- **[Agent Skills (Resource)](https://github.com/MLOps-Courses/mlops-coding-skills)**: Enhance your AI Agents with standardized skills for MLOps and coding.
 
 ![](images/mlopsmindmap.png)
 
@@ -129,17 +131,21 @@ This section details the requirements, actions, and next steps to kickstart your
 ## Installation
 
 1. [Clone this GitHub repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) on your computer
+
 ```bash
 # with ssh (recommended)
 $ git clone git@github.com:fmind/mlops-python-package
 # with https
 $ git clone https://github.com/fmind/mlops-python-package
 ```
+
 2. [Run the project installation with uv](https://docs.astral.sh/uv/)
+
 ```bash
-$ cd mlops-python-package/
-$ uv sync
+cd mlops-python-package/
+uv sync
 ```
+
 3. Adapt the code base to your desire
 
 ## Next Steps
@@ -171,6 +177,7 @@ job:
 ```
 
 This config file instructs the program to start a `TrainingJob` with 2 parameters:
+
 - `inputs`: dataset that contains the model inputs
 - `targets`: dataset that contains the model target
 
@@ -183,12 +190,12 @@ You can also print the full schema supported by this package using `uv run bikes
 The project code can be executed with uv during your development:
 
 ```bash
-$ uv run [package] confs/tuning.yaml
-$ uv run [package] confs/training.yaml
-$ uv run [package] confs/promotion.yaml
-$ uv run [package] confs/inference.yaml
-$ uv run [package] confs/evaluations.yaml
-$ uv run [package] confs/explanations.yaml
+uv run [package] confs/tuning.yaml
+uv run [package] confs/training.yaml
+uv run [package] confs/promotion.yaml
+uv run [package] confs/inference.yaml
+uv run [package] confs/evaluations.yaml
+uv run [package] confs/explanations.yaml
 ```
 
 In production, you can build, ship, and run the project as a Python package:
@@ -211,6 +218,7 @@ with job as runner:
 ```
 
 **Additional tips**:
+
 - You can pass extra configs from the command line using the `--extras` flag
   - Use it to pass runtime values (e.g., a result from previous job executions)
 - You can pass several config files in the command-line to merge them from left to right
@@ -311,6 +319,7 @@ project-run job # run project job using mlflow
 ## Workflows
 
 This package supports two GitHub Workflows in `.github/workflows`:
+
 - `check.yml`: validate the quality of the package on each Pull Request
 - `publish.yml`: build and publish the docs and packages on code release.
 
@@ -434,7 +443,7 @@ Edition, validation, and versioning of your project source code.
 - **Limitations**:
   - None
 - **Alternatives**:
--  - [Pytest Cov](https://pytest-cov.readthedocs.io/en/latest/) A Pytest plugin that uses `coverage.py` to measure code coverage.
+ - [Pytest Cov](https://pytest-cov.readthedocs.io/en/latest/) A Pytest plugin that uses `coverage.py` to measure code coverage.
 
 ### Editor: [VS Code](https://code.visualstudio.com/)
 
@@ -515,7 +524,7 @@ Edition, validation, and versioning of your project source code.
   - Most popular source code manager (what else?)
   - Provide hooks to perform automation on some events
 - **Limitations**:
-  - Git can be hard: https://xkcd.com/1597/
+  - Git can be hard: <https://xkcd.com/1597/>
 - **Alternatives**:
   - [Mercurial](https://www.mercurial-scm.org/): loved it back then, but git is the only real option
 
@@ -741,7 +750,7 @@ Define and build modern Python package.
 - **Alternatives**:
   - [Setuptools](https://docs.python.org/3/distutils/setupscript.html): dynamic file is slower and more risky
   - [Poetry](https://python-poetry.org/): previous solution of this package
-  - Pdm, Hatch, PipEnv: https://xkcd.com/1987/
+  - Pdm, Hatch, PipEnv: <https://xkcd.com/1987/>
 
 ### Runtime: [Docker](https://www.docker.com/resources/what-container/)
 
@@ -980,11 +989,13 @@ The package uses `src/[package]/jobs/*.py` to handle exception and services.
 **You should create Python package to create both library and application for others.**
 
 Using Python package for your AI/ML project has the following benefits:
+
 - Build code archive (i.e., wheel) that be uploaded to Pypi.org
 - Install Python package as a library (e.g., like pandas)
 - Expose script entry points to run a CLI or a GUI
 
 To build a Python package with uv, you simply have to type in a terminal:
+
 ```bash
 # for all uv project
 uv build
@@ -1087,6 +1098,7 @@ The package defines class interface whenever possible to provide intuitive and r
 **You should use semantic versioning to communicate the level of compatibility of your releases.**
 
 Semantic Versioning (SemVer) provides a simple schema to communicate code changes. For package X.Y.Z:
+
 - *Major* (X): major release with breaking changed (i.e., imply actions from the benefit)
 - *Minor* (Y): minor release with new features (i.e., provide new capabilities)
 - *Patch* (Z): patch release to fix bugs (i.e., correct wrong behavior)
@@ -1121,11 +1133,11 @@ This package defines fixtures in `tests/conftest.py` to improve your testing exp
 
 ```json
 {
-	"settings": {
-		"editor.formatOnSave": true,
-		"python.defaultInterpreterPath": ".venv/bin/python",
+ "settings": {
+  "editor.formatOnSave": true,
+  "python.defaultInterpreterPath": ".venv/bin/python",
     ...
-	},
+ },
 }
 ```
 
@@ -1153,13 +1165,13 @@ This section provides resources for building packages for Python and AI/ML/MLOps
 
 ## Python
 
-- https://github.com/krzjoa/awesome-python-data-science#readme
-- https://github.com/ml-tooling/best-of-ml-python
-- https://github.com/ml-tooling/best-of-python
-- https://github.com/ml-tooling/best-of-python-dev
-- https://github.com/vinta/awesome-python
+- <https://github.com/krzjoa/awesome-python-data-science#readme>
+- <https://github.com/ml-tooling/best-of-ml-python>
+- <https://github.com/ml-tooling/best-of-python>
+- <https://github.com/ml-tooling/best-of-python-dev>
+- <https://github.com/vinta/awesome-python>
 
 ## AI/ML/MLOps
 
-- https://github.com/josephmisiti/awesome-machine-learning
-- https://github.com/visenger/awesome-mlops
+- <https://github.com/josephmisiti/awesome-machine-learning>
+- <https://github.com/visenger/awesome-mlops>
